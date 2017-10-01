@@ -34,11 +34,8 @@ public class LoreConfig {
 
     private void reloadConfig() {
         fileConfiguration = YamlConfiguration.loadConfiguration(configFile);
-        InputStream defConfigStream = plugin.getResource(fileName);
-        if (defConfigStream != null) {
-            YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
-            fileConfiguration.setDefaults(defConfig);
-        }
+        YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(configFile);
+        fileConfiguration.setDefaults(defConfig);
     }
 
     private FileConfiguration getConfig() {
