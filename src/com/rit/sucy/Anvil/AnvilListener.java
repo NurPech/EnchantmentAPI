@@ -47,7 +47,9 @@ public class AnvilListener implements Listener {
 
             // See if the server is supported
             String pack = Version.getPackage();
-            if (pack.equals("v1_9_R1"))
+            if(pack.equals("v1_12_R1"))
+            	anvil = new com.rit.sucy.Anvil.v1_12_1.MainAnvil(plugin, event.getInventory(), player);
+            else if (pack.equals("v1_9_R1"))
                 anvil = new com.rit.sucy.Anvil.v1_9_0.MainAnvil(plugin, event.getInventory(), player);
             else if (pack.equals("v1_8_R3"))
                 anvil = new com.rit.sucy.Anvil.v1_8_6.MainAnvil(plugin, event.getInventory(), player);
